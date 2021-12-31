@@ -1,0 +1,7 @@
+﻿C:\Program Files\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(519,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (class_Money.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  Main.cpp
+  Money.cpp
+E:\С++\ООП тренировка\class_Money\Money.cpp(19,12): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+  Shop.cpp
+  Создание кода...
+  class_Money.vcxproj -> E:\С++\ООП тренировка\class_Money\x64\Debug\Shop.exe
