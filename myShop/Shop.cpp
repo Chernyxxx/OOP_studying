@@ -67,13 +67,13 @@ void Shop::GetPriceList(list<Product>& obj)
 	for (int i=0 ; i < obj.size(); i++)  
 	{			
 		cout << *it << endl;
-		advance(it, 1);				// Move iter fom begin to eng
+		advance(it, 1);				
 	}
 }
 
 list<Product>::iterator Shop::SearchByBarCode(list<Product> &obj)
 {
-	cout << "\n Введите номер на штрих-коде\t";
+	cout << "\n Enter a barcode\t";
 		
 	list<Product>::iterator it=obj.begin();
 	
@@ -86,13 +86,13 @@ list<Product>::iterator Shop::SearchByBarCode(list<Product> &obj)
 			{return obj.GetBarCode() == barCode; });
 		if (it == obj.end())
 		{
-			cout << " Номер не найден! ";
-			cout << " Введите другой номер!\n\n";
+			cout << " Number is not exist! ";
+			cout << " Enter the other number!\n\n";
 			barCodeOK = false;
 		}
 		else
 		{
-			cout << "\n    Выбранный продукт\n\n";
+			cout << "\n  CHOOSED PRODUCT\n\n";
 			cout << " " << *(it) << "\n";
 			barCodeOK = true;
 		}
@@ -108,13 +108,13 @@ void Shop::SellProduct(list<Product>& obj)
 	
 	it = SearchByBarCode(obj);
 	
-	cout << " Укажите количество\t";
+	cout << " Please enter the quantity\t";
 	Money price = (*it).GetProductPrice();
 	int qnt = InputINT();
 	
-	cout << "\n К оплате = " << GetFloatPrice(price) * qnt << "\n\n";
-	cout << " Оформить _____ ENTER\t";
-	cout << " Отмена ______ ESC\n\n";
+	cout << "\n To pay = " << GetFloatPrice(price) * qnt << "\n\n";
+	cout << " Confirm _____ ENTER\t";
+	cout << " Cancel ______ ESC\n\n";
 	
 	int choice = EnterEscapeChoice();
 	switch (choice)
@@ -123,10 +123,10 @@ void Shop::SellProduct(list<Product>& obj)
 		(*it).MinusQuantity(qnt);
 		pricef = GetFloatPrice(price);
 		m_debt = m_debt + pricef * qnt;
-		cout << "\n\t УСПЕШНО \n\n";
+		cout << "\n\t Operation executed \n\n";
 		break;
 	case(ESC):
-		cout << "\n\t ОТМЕНЕНО \n\n";
+		cout << "\n\t Operation canceled \n\n";
 		break;
 	default:
 		break;
@@ -147,15 +147,15 @@ void Shop::PrintTag(list<Product>& obj)
 	auto it = SearchByBarCode(obj);
 	string name = (*it).GetProductName();
 	Money price = (*it).GetProductPrice();
-	cout << "\n Напечатать ______ ENTER\n";
-	cout << " Отмена __________ ESC\n";
+	cout << "\n Print ______ ENTER\n";
+	cout << " Cancel _______ ESC\n";
 
 	int choice = EnterEscapeChoice();
 	switch (choice)
 	{
 	case(ENTER):
 		system("cls");
-		cout << "\t\tПЕЧАТЬ ЦЕННИКА\n\n";
+		cout << "\t\tPRINTING IN PROGRESS\n\n";
 		cout << "----------------------------------\n";
 		cout << "-------- " << name << " " << "\n\n";
 		cout << "-------- " << price << " " << "\n\n";
@@ -173,8 +173,8 @@ void Shop::ShowInfo()
 {
 	
 	cout << "----" << m_name << "----\n\n"
-		<< "Адрес_____ " << m_adress << "\n\n"
-		<< "Телефон___ " << m_phoneNo;
+		<< "Adres_____ " << m_adress << "\n\n"
+		<< "phone#____ " << m_phoneNo;
 		
 }
 

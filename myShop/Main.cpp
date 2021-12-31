@@ -1,11 +1,11 @@
 #include <iostream>
 #include "Shop.h"
 #include "List_of_prod.h"
-#include <cstdlib>				// forsystem("cls")
+#include <cstdlib>			// for system("cls")
 #include <algorithm>
 #include <list>
-#include <Windows.h>			// for Sleep(int)
-#include <conio.h>				// for _getch()
+#include <Windows.h>		// for Sleep(int)
+#include <conio.h>			// for _getch()
 #define button1 49
 #define button2 50
 #define button3 51
@@ -20,9 +20,10 @@
 
 using namespace std;
 
+// Function shows menu screen after user press ESC
 void BackToMenu()
 {
-	cout << "\n\n Äëÿ âîçâðàòà â ìåíþ íàæìèòå ESC ";
+	cout << "\n\n Back to MENU - press ESC ";
 	int key;
 	key = _getch();
 	while (key != ESC)
@@ -35,19 +36,19 @@ int main()
 {
 	setlocale(LC_ALL, "ru");
 	
-	Shop myShop("Ïðîäóêòû", "óë. Êèðîâà 10", "236-12-80", list_of_prod, (float)0.0); 
+	Shop myShop("MyShop", "Straight street, 10", "236-12-80", list_of_prod, (float)0.0); 
 	while(true)
 	{
 		// SHOW MAIN MENU
 
 		system("cls");
-		cout << "\n\tÌÀÃÀÇÈÍ <<ÏÐÎÄÓÊÒÛ>>\n\n";
-		cout << " Ïîñìîòðåòü àññîðòèìåíò ____________ 1\n\n";
-		cout << " Ïðîäàòü òîâàð _____________________ 2\n\n";
-		cout << " Ïðèíÿòü òîâàð _____________________ 3\n\n";
-		cout << " Ðàñïå÷àòàòü öåííèê ________________ 4\n\n";
-		cout << " Ïîñìîòðåòü âûðó÷êó ________________ 5\n\n";
-		cout << " Èíôîðìàöèÿ î ìàãàçèíå _____________ 6\n\n";
+		cout << "\n\tProduct shop <<MY SHOP>>\n\n";
+		cout << " Show product list_________________ 1\n\n";
+		cout << " Sell product _____________________ 2\n\n";
+		cout << " Recieve product __________________ 3\n\n";
+		cout << " Print a price tag ________________ 4\n\n";
+		cout << " Show revenue _____________________ 5\n\n";
+		cout << " About shop _______________________ 6\n\n";
 
 		Product newProd;
 		int choice;
@@ -65,7 +66,7 @@ int main()
 
 		case(button1): 
 			system("cls");
-			cout << "\n\t\tÀÑCÎÐÒÈÌÅÍÒ ÒÎÂÀÐÎÂ Â ÍÀËÈ×ÈÈ\n\n"; 
+			cout << "\n\t\tPRICELIST\n\n"; 
 			myShop.GetPriceList(list_of_prod);
 			BackToMenu();
 			break;
@@ -74,7 +75,7 @@ int main()
 
 		case(button2):
 			system("cls");
-			cout << "\n\t\tÏÐÎÄÀÒÜ ÒÎÂÀÐ\n\n";
+			cout << "\n\t\tSELL PRODUCT\n\n";
  			myShop.SellProduct(list_of_prod);
 			Sleep(2000);
 			break;
@@ -85,7 +86,7 @@ int main()
 			system("cls");
 			newProd = newProd.SetProduct();
 			list_of_prod.push_back(newProd);
-			cout << "\n\t ÓÑÏÅØÍÎ \n\n";
+			cout << "\n\t Product added \n\n";
 			Sleep(2000);
 			break;
 
@@ -96,19 +97,20 @@ int main()
 			myShop.PrintTag(list_of_prod); 
 			Sleep(4000);
 			break;
+
+			// SHOW REVENUE
 		case(button5):
 			system("cls");
-			cout << "\n Âûðó÷êà - " << myShop.GetDebt();
+			cout << "\n REVENUE - " << myShop.GetDebt();
 			BackToMenu();
 			break;
+
+			// SHOW INFO
 		case(button6):
 			system("cls");
 			myShop.ShowInfo(); 
 			BackToMenu();
-			//break;
-		//default:
-
-		//	break;
+			break;
 		}
 		
 	}

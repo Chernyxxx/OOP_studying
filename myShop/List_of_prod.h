@@ -4,11 +4,11 @@
 #include "Product.h"
 
 
-Product Milk{ "Молоко", 1, 56.54, 150};
-Product Bread{ "Хлеб", 2, 34.20, 220};
-Product Veg_Oil{ "Масло", 3, 95.43, 16};
-Product Cheese{ "Сыр", 4, 245.30, 10};
-Product Sausage{ "Колбаса",5, 650.56, 10};
+Product Milk{ "Milk", 1, 56.54, 150};
+Product Bread{ "Bread", 2, 34.20, 220};
+Product Veg_Oil{ "Oil_vegetable", 3, 95.43, 16};
+Product Cheese{ "Cheese", 4, 245.30, 10};
+Product Sausage{ "Sausages",5, 650.56, 10};
 
 
 

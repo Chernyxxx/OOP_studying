@@ -46,16 +46,16 @@ void Product::MinusQuantity(int qnt) // Уменьшает количество продукта на заданно
 
 Product Product::SetProduct()
 {
-	cout << " Введите наименование\t";
+	cout << " Please enter the product name \t";
 	string name;
 	cin >> name;
-	cout << "\n Введите номер штрих-кода\t";
+	cout << "\n Please enter the barcode\t";
 	int barCode;
 	cin >> barCode;
-	cout << "\n Введите цену (рубли от копеек отделить через точку)\t";
+	cout << "\n Please enter the price \n(rubles should be devided from kops by dot)\t";
 	float price;
 	cin >> price;
-	cout << "\n Введите количество\t";
+	cout << "\n Please enter the guantity\t";
 	int qnt;
 	cin >> qnt;
 	
@@ -71,8 +71,8 @@ std::ostream& operator<<(std::ostream& out, const Product& obj)
 {
 
 	out <<"- - - "<<obj.m_name << " - - -\n"
-		<<"Номер штрих-кода________ " <<obj.m_BarCode <<"\n"
-		<<"Цена____________________ "<<obj.m_price<<"\n"
-		<<"Остаток_________________ "<<obj.m_quantity<<" шт\n\n";
+		<<"Barcode number___________ " <<obj.m_BarCode <<"\n"
+		<<"Price____________________ "<<obj.m_price<<"\n"
+		<<"Quantity_________________ "<<obj.m_quantity<<" units\n\n";
 	return out;
 }

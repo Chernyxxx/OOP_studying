@@ -25,6 +25,6 @@ float Money::GetKop()
 std::ostream& operator<<(std::ostream& out, const Money& obj)
 {
 
-	out << obj.m_rouble<< "ð" <<obj.m_kop<<"ê";
+	out << obj.m_rouble<< "rub" <<obj.m_kop<<"kop";
 	return out;
 }

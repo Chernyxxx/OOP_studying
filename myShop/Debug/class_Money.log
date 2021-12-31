@@ -1,1 +1,13 @@
-﻿  class_Money.vcxproj -> E:\С++\ООП тренировка\class_Money\Debug\Shop.exe
+﻿  Main.cpp
+E:\С++\ООП тренировка\myShop\List_of_prod.h(7,44): warning C4305: аргумент: усечение из "double" в "float"
+E:\С++\ООП тренировка\myShop\List_of_prod.h(8,41): warning C4305: аргумент: усечение из "double" в "float"
+E:\С++\ООП тренировка\myShop\List_of_prod.h(9,44): warning C4305: аргумент: усечение из "double" в "float"
+E:\С++\ООП тренировка\myShop\List_of_prod.h(10,40): warning C4305: аргумент: усечение из "double" в "float"
+E:\С++\ООП тренировка\myShop\List_of_prod.h(11,48): warning C4305: аргумент: усечение из "double" в "float"
+  Money.cpp
+E:\С++\ООП тренировка\myShop\Money.cpp(9,13): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+  Product.cpp
+  Shop.cpp
+E:\С++\ООП тренировка\myShop\Shop.cpp(67,19): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода...
+  class_Money.vcxproj -> E:\С++\ООП тренировка\myShop\Debug\Shop.exe
